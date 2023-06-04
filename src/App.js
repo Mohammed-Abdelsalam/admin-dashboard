@@ -39,10 +39,10 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {isUser && <Profile />}
-        {keys.length === 0 && <SignIn />}
-        {isAdmin && <DashboardLayout />}
-        {/* <DashboardLayout /> */}
+        {/* {isUser && <Profile />} */}
+        {/* {keys.length === 0 && <SignIn />} */}
+        {/* {isAdmin && <DashboardLayout />} */}
+        <DashboardLayout />
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
