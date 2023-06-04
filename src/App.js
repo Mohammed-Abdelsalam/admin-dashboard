@@ -32,17 +32,17 @@ function App() {
   }, [isUser, isAdmin]);
 
   if (!mount) {
-    return;
+    return;   
   }
 
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {/* {isUser && <Profile />}
+        {isUser && <Profile />}
         {keys.length === 0 && <SignIn />}
-        {isAdmin && <DashboardLayout />} */}
-        <DashboardLayout />
+        {isAdmin && <DashboardLayout />}
+        {/* <DashboardLayout /> */}
       </ThemeProvider>
     </ColorModeContext.Provider>
   );

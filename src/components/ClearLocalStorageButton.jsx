@@ -17,6 +17,7 @@ const ClearLocalStorageButton = () => {
 
   return (
     <React.Fragment>
+      <Link to="/">
       <Button
         sx={{
           borderRadius: "0 !important",
@@ -27,8 +28,9 @@ const ClearLocalStorageButton = () => {
         }}
         onClick={handleClick}
       >
-        <Link to="/">Logout</Link>
+        Logout
       </Button>
+      </Link>
     </React.Fragment>
   );
 };

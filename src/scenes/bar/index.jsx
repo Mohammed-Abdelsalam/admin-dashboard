@@ -9,7 +9,7 @@ const Bar = () => {
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header tittle={"BAR CHART"} subtittle={"Sample Of Bar Chart"} />
       </Box>
-      <Box m="40px 0 0 0" height="75vh">
+      <Box color={'black'} m="40px 0 0 0" height="75vh">
         <BarChart />
       </Box>
     </Box>
