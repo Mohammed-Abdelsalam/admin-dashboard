@@ -13,19 +13,35 @@ const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
-    <Box display="flex" justifyContent="space-between" p={2}>
+    <Box
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      p={2}
+      sx={{
+        flexDirection: { xs: "column", sm: "row" },
+      }}
+    >
       <Box
         display="flex"
         backgroundColor={colors.primary[400]}
         borderRadius="3px"
+        mb={{ xs: 2, sm: 0 }}
       >
-        <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
+        <InputBase
+          sx={{ ml: 2, flex: 1 }}
+          placeholder="Search"
+          inputProps={{
+            sx: {
+              py: { xs: 1, sm: 0 },
+            },
+          }}
+        />
         <IconButton type="button" sx={{ p: 1 }}>
           <SearchIcon />
         </IconButton>
       </Box>
       <Box>
-        <ThemeIcon />
         <IconButton type="button" sx={{ p: 1 }}>
           <NotificationsOutlinedIcon />
         </IconButton>
@@ -35,6 +51,7 @@ const Topbar = () => {
         <IconButton type="button" sx={{ p: 1 }}>
           <PersonOutlinedIcon />
         </IconButton>
+        <ThemeIcon />
         <ClearLocalStorageButton />
       </Box>
     </Box>

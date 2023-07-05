@@ -1,22 +1,14 @@
 import React from "react";
-
-// MUI
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
-
-// components
 import Header from "../../components/Header";
 import StateBox from "../../components/StateBox";
 import ProgressCircle from "../../components/ProgressCircle";
 import { tokens } from "../../theme";
-
-// Icons
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
-
-// Charts
 import LineChart from "../../components/LineChart";
 import BarChart from "../../components/BarChart";
 import PieChart from "../../components/PieChart";
@@ -27,13 +19,21 @@ const Dashboard = () => {
 
   return (
     <Box m="20px">
-      {/* HEADER */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Box display="flex" justifyContent="space-between" alignItems="center">
-          <Header tittle={"DASHBOARD"} subtittle={"Wekcome TO Our Dashboard"} />
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        flexDirection={{ xs: "column", sm: "row" }}
+      >
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Header tittle={"DASHBOARD"} subtittle={"Welcome TO Our Dashboard"} />
         </Box>
 
-        <Box>
+        <Box sx={{ mt: { xs: "10px", sm: "0" } }}>
           <Button
             sx={{
               backgroundColor: colors.blueAccent[700],
@@ -49,16 +49,14 @@ const Dashboard = () => {
         </Box>
       </Box>
 
-      {/* GRID & CHARTS */}
       <Box
         display="grid"
-        gridTemplateColumns="repeat(12, 1fr)"
+        gridTemplateColumns={{ xs: "1fr", sm: "repeat(12, 1fr)" }}
         gridAutoRows="140px"
         gap="20px"
       >
-        {/* ROW 1 */}
         <Box
-          gridColumn="span 3"
+          gridColumn={{ xs: "1", sm: "span 3" }}
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
@@ -77,7 +75,7 @@ const Dashboard = () => {
           />
         </Box>
         <Box
-          gridColumn="span 3"
+          gridColumn={{ xs: "1", sm: "span 3" }}
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
@@ -96,7 +94,7 @@ const Dashboard = () => {
           />
         </Box>
         <Box
-          gridColumn="span 3"
+          gridColumn={{ xs: "1", sm: "span 3" }}
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
@@ -115,7 +113,7 @@ const Dashboard = () => {
           />
         </Box>
         <Box
-          gridColumn="span 3"
+          gridColumn={{ xs: "1", sm: "span 3" }}
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
@@ -134,16 +132,15 @@ const Dashboard = () => {
           />
         </Box>
 
-        {/* ROW 2 */}
         <Box
-          gridColumn="span 8"
-          gridRow="span 2"
+          gridColumn={{ xs: "1", sm: "span 8" }}
+          gridRow={{ xs: "auto", sm: "span 2" }}
           backgroundColor={colors.primary[400]}
         >
           <Box
             mt="25px"
-            p="0 30px"
-            display="flex "
+            p={{ xs: "0 10px", sm: "0 30px" }}
+            display="flex"
             justifyContent="space-between"
             alignItems="center"
           >
@@ -176,10 +173,9 @@ const Dashboard = () => {
           </Box>
         </Box>
 
-        {/* ROW 3 */}
         <Box
-          gridColumn="span 4"
-          gridRow="span 2"
+          gridColumn={{ xs: "1", sm: "span 4" }}
+          gridRow={{ xs: "auto", sm: "span 2" }}
           backgroundColor={colors.primary[400]}
           p="30px"
         >
@@ -204,14 +200,14 @@ const Dashboard = () => {
           </Box>
         </Box>
         <Box
-          gridColumn="span 4"
-          gridRow="span 2"
+          gridColumn={{ xs: "1", sm: "span 4" }}
+          gridRow={{ xs: "auto", sm: "span 2" }}
           backgroundColor={colors.primary[400]}
         >
           <Typography
             variant="h5"
             fontWeight="600"
-            sx={{ padding: "30px 30px 0 30px" }}
+            sx={{ padding: { xs: "10px 10px 0 10px", sm: "30px 30px 0 30px" } }}
           >
             Sales Quantity
           </Typography>
@@ -220,8 +216,8 @@ const Dashboard = () => {
           </Box>
         </Box>
         <Box
-          gridColumn="span 8"
-          gridRow="span 2"
+          gridColumn={{ xs: "1", sm: "span 8" }}
+          gridRow={{ xs: "auto", sm: "span 2" }}
           backgroundColor={colors.primary[400]}
         >
           <PieChart isDashboard={true} />

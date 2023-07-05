@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, IconButton, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -37,6 +37,7 @@ const Sidebar = () => {
   const colors = tokens(theme.palette.mode);
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
+    const isXsScreen = useMediaQuery(theme.breakpoints.only("xs"));
 
   return (
     <Box
@@ -58,7 +59,7 @@ const Sidebar = () => {
         },
       }}
     >
-      <ProSidebar collapsed={open}>
+      <ProSidebar collapsed={isXsScreen ? !open : open}>
         <Menu iconShape="square">
           <MenuItem
             onClick={() => setOpen(!open)}
@@ -68,7 +69,7 @@ const Sidebar = () => {
               color: colors.grey[100],
             }}
           >
-            {!open && (
+            {(!isXsScreen && !open)  && (
               <Box
                 display="flex"
                 justifyContent="space-between"
@@ -85,7 +86,7 @@ const Sidebar = () => {
             )}
           </MenuItem>
 
-          {!open && (
+          {(!isXsScreen && !open) && (
             <Box mb="25px">
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
